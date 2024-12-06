@@ -1,6 +1,7 @@
 # Syrna
-
+<!--
 [![Discord online](https://badgen.net/discord/online-members/xyg8TrRa27?label=Discord)](https://discord.gg/xyg8TrRa27)
+-->
 
 We help to improve your development experience with the ABP framework.
 
@@ -8,6 +9,7 @@ We help to improve your development experience with the ABP framework.
 
 [ABP Framework](https://github.com/abpframework/abp) [![GitHub stars](https://img.shields.io/github/stars/abpframework/abp?style=social)](https://www.github.com/abpframework/abp) is an open-source web application framework based on [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core). All the products in Syrna organization are designed for the ABP framework.
 
+<!--
 ## AbpHelper
 
 AbpHelper provides code generation and more features to help you develop applications and modules with the ABP framework.
@@ -212,7 +214,7 @@ ABP application startup template or installer with pre-built modules.
 ### [EasyMall](https://github.com/Syrna/EasyMall) ![Backlog](https://img.shields.io/badge/-Backlog-lightgrey?style=flat-square)
 
 Quickly build an e-commerce application based on Syrna.EShop.
-
+-->
 ## How To
 
 See ["How To" Guides](/docs/How-To.md).
