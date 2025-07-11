@@ -13,14 +13,14 @@ We have some standards based on the official document: [Module Development Best 
 ### Abstraction
 
 Try to design an abstract module and provide more implementations.
-* Good practice: `Syrna.Abp.Sms`, `Syrna.Abp.Sms.Aws`, `Syrna.Abp.Sms.Azure`.
-* Bad practice: `Syrna.Abp.AzureSms`.
+* Good practice: `FastSoft.Has.Sms`, `FastSoft.Has.Sms.Aws`, `FastSoft.Has.Sms.Azure`.
+* Bad practice: `FastSoft.Has.AzureSms`.
 
 ### Module Naming
 
 Example of module solution name:
 * Application module: `Syrna.TodoManagement`.
-* Framework module: `Syrna.Abp.Todo` (including the prefix `Abp.`).
+* Framework module: `FastSoft.Has.Todo` (including the prefix `Abp.`).
 > For framework modules, the better name of `XxxxxxModule` class for framework module is `AbpXxxxxxModule`.
 
 ### Domain Services
