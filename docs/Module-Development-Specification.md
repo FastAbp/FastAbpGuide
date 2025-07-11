@@ -1,6 +1,6 @@
 # Module Development Specification
 
-This document introduces the module development specification of the Syrna organization. Follow these rules and designs if you want to join and contribute.
+This document introduces the module development specification of the FastAbp organization. Follow these rules and designs if you want to join and contribute.
 
 ## Basic Knowledges
 
@@ -19,7 +19,7 @@ Try to design an abstract module and provide more implementations.
 ### Module Naming
 
 Example of module solution name:
-* Application module: `Syrna.TodoManagement`.
+* Application module: `FastAbp.TodoManagement`.
 * Framework module: `FastSoft.Has.Todo` (including the prefix `Abp.`).
 > For framework modules, the better name of `XxxxxxModule` class for framework module is `AbpXxxxxxModule`.
 
@@ -34,7 +34,7 @@ Todo.
 
 ### Solution Structure
 
-Read the document [Getting Start to Develop Modules](https://github.com/Syrna/SyrnaGuide/blob/master/docs/Getting-Start-to-Develop-Modules.md) and follow it to adjust your module solution from the startup template.
+Read the document [Getting Start to Develop Modules](https://github.com/FastAbp/FastAbpGuide/blob/master/docs/Getting-Start-to-Develop-Modules.md) and follow it to adjust your module solution from the startup template.
 
 ### More Virtual Methods
 
@@ -52,9 +52,9 @@ Generally, please virtualize the above methods, but you should also think about 
 
 ### Menu Items
 
-Refer to the [MenuContributor demo](https://github.com/Syrna/GiftCardManagement/blob/master/src/Syrna.GiftCardManagement.Web/GiftCardManagementMenuContributor.cs).
+Refer to the [MenuContributor demo](https://github.com/FastAbp/GiftCardManagement/blob/master/src/FastAbp.GiftCardManagement.Web/GiftCardManagementMenuContributor.cs).
 
-* The name of menu item should have a `CompanyName+ModuleName` prefix, for example: `SyrnaGiftCardManagementGiftCard` is the `GiftCard` using the `SyrnaGiftCardManagement` prefix.
+* The name of menu item should have a `CompanyName+ModuleName` prefix, for example: `FastAbpGiftCardManagementGiftCard` is the `GiftCard` using the `FastAbpGiftCardManagement` prefix.
 * Create a `CompanyName+ModuleName` menu item as the root of the module and put other menu items into it, hide it if there is nosub menu item inside.
 
 ### Retain a Parameterless Constructor
@@ -96,22 +96,22 @@ Use `IClock.Now` instead of `DateTime.Now` or `DateTime.UtcNow` in all your code
 
 ### Using ConfigureAwait.Fody
 
-Refer to the [common.props](https://github.com/Syrna/PrivateMessaging/blob/master/common.props) and the [FodyWeavers.xml](https://github.com/Syrna/PrivateMessaging/blob/master/src/Syrna.PrivateMessaging.Domain/FodyWeavers.xml) demos.
+Refer to the [common.props](https://github.com/FastAbp/PrivateMessaging/blob/master/common.props) and the [FodyWeavers.xml](https://github.com/FastAbp/PrivateMessaging/blob/master/src/FastAbp.PrivateMessaging.Domain/FodyWeavers.xml) demos.
 
 * Add `Fody` and `ConfigureAwait.Fody` references to module projects.
 * Set `<ConfigureAwait ContinueOnCapturedContext="false" />`.
 
 ### Don't Use the Auto API Controllers
 
-The ABP auto API controllers is not friendly to tiered solutions, so please use the [AbpHelper](https://github.com/Syrna/AbpHelper.GUI/blob/master/doc/AbpHelper-CLI/Generate-Controller-Code/Usage.md) to generate controllers manually.
+The ABP auto API controllers is not friendly to tiered solutions, so please use the [AbpHelper](https://github.com/FastAbp/AbpHelper.GUI/blob/master/doc/AbpHelper-CLI/Generate-Controller-Code/Usage.md) to generate controllers manually.
 
 ### Change and Use Name Constants
 
-* Open `MyModuleNamePermissions.cs` and change **GroupName** to `Syrna.MyModuleName`.
-* Open `MyModuleNameSettings.cs` and change **GroupName** to `Syrna.MyModuleName`.
-* Open `MyModuleNameRemoteServiceConsts.cs` and change **RemoteServiceName** to `SyrnaMyModuleName`.
-* Open `MyModuleNameRemoteServiceConsts.cs` and change **ModuleName** to `syrnaMyModuleName`.
-* Open `MyModuleNameResource.cs` and replace `[LocalizationResourceName("MyModuleName")]` with `[LocalizationResourceName("SyrnaMyModuleName")]`.
+* Open `MyModuleNamePermissions.cs` and change **GroupName** to `FastAbp.MyModuleName`.
+* Open `MyModuleNameSettings.cs` and change **GroupName** to `FastAbp.MyModuleName`.
+* Open `MyModuleNameRemoteServiceConsts.cs` and change **RemoteServiceName** to `FastAbpMyModuleName`.
+* Open `MyModuleNameRemoteServiceConsts.cs` and change **ModuleName** to `FastAbpMyModuleName`.
+* Open `MyModuleNameResource.cs` and replace `[LocalizationResourceName("MyModuleName")]` with `[LocalizationResourceName("FastAbpMyModuleName")]`.
 * Open `MyModuleNameController.cs` and add **[Area(MyModuleNameServiceConsts.ModuleName)]** attribute.
 
 ### Depend on Other Modules
@@ -125,30 +125,30 @@ Todo.
 ### common.props
 
 Follow the steps below:
-1. Copy the [common.props](https://github.com/Syrna/FileManagement/blob/master/common.props) demo to your module.
+1. Copy the [common.props](https://github.com/FastAbp/FileManagement/blob/master/common.props) demo to your module.
 1. Edit `Version`, `Description`, `PackageTags` and `PackageLicenseExpression`. (Don't follow the ABP framework's version.)
 
 ### README.md
 
-Refer to the [README.md](https://github.com/Syrna/FileManagement/blob/master/README.md) demo. You can customize the structure, but in fact similar formats are more readable.
+Refer to the [README.md](https://github.com/FastAbp/FileManagement/blob/master/README.md) demo. You can customize the structure, but in fact similar formats are more readable.
 
 ### Packaging and Publishing
 
-Refer to the [GitHub Action demo](https://github.com/Syrna/FileManagement/tree/master/.github/workflows/publish.yml), configure your project publication jobs. The NuGet packages will be automatic built and published after you commit code to the **master** branch with a new module version.
+Refer to the [GitHub Action demo](https://github.com/FastAbp/FileManagement/tree/master/.github/workflows/publish.yml), configure your project publication jobs. The NuGet packages will be automatic built and published after you commit code to the **master** branch with a new module version.
 
 ### Continuous Updating
 
-* Syrna modules always follow the latest version of ABP framework, so when a new version ABP released, you should upgrade your modules as soon as possible.
-* Write down the roadmap in README.md with reference to this [demo](https://github.com/Syrna/FileManagement/blob/master/docs/README.md#road-map) and implement them when you have time and inspiration.
+* FastAbp modules always follow the latest version of ABP framework, so when a new version ABP released, you should upgrade your modules as soon as possible.
+* Write down the roadmap in README.md with reference to this [demo](https://github.com/FastAbp/FileManagement/blob/master/docs/README.md#road-map) and implement them when you have time and inspiration.
 * Create a new GitHub release and announce all the **breaking changes** before publish new version pacakges to NuGet.
 
 ## Contribute to FastAbp
 
-Welcome to contribute to Syrna organization, you can publish new modules or improve existing modules for us.
+Welcome to contribute to FastAbp organization, you can publish new modules or improve existing modules for us.
 
 ### Publish New Modules
 
-If you want to contribute a new module to Syrna, please create an issue [here](https://github.com/Syrna/SyrnaGuide/issues) to introduce your design and provide the link to your module Github repository. We will evaluate your design and review your code, if the module is well-designed and needed, we will add it to Syrna org.
+If you want to contribute a new module to FastAbp, please create an issue [here](https://github.com/FastAbp/FastAbpGuide/issues) to introduce your design and provide the link to your module Github repository. We will evaluate your design and review your code, if the module is well-designed and needed, we will add it to FastAbp org.
 
 ### Improve Existing Modules
 
