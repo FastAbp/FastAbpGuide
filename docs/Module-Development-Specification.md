@@ -142,7 +142,7 @@ Refer to the [GitHub Action demo](https://github.com/Syrna/FileManagement/tree/m
 * Write down the roadmap in README.md with reference to this [demo](https://github.com/Syrna/FileManagement/blob/master/docs/README.md#road-map) and implement them when you have time and inspiration.
 * Create a new GitHub release and announce all the **breaking changes** before publish new version pacakges to NuGet.
 
-## Contribute to Syrna
+## Contribute to FastAbp
 
 Welcome to contribute to Syrna organization, you can publish new modules or improve existing modules for us.
 
